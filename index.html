@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Gerador de Filtros — FIIs e Ações</title>
+  <meta name="description" content="Monte um filtro educacional para FIIs ou ações, ajuste os critérios e copie um roteiro pronto para usar no Investidor10.">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Gerador de Filtros — FIIs e Ações">
+  <meta property="og:description" content="Monte um filtro educacional para FIIs ou ações, ajuste os critérios e copie um roteiro pronto para usar no Investidor10.">
+  <meta property="og:url" content="https://tenentedoexercitodeproplayersemjogos.github.io/gerador-de-filtros/">
+  <meta property="og:site_name" content="Gerador de Filtros">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#070B14">
+  <link rel="canonical" href="https://tenentedoexercitodeproplayersemjogos.github.io/gerador-de-filtros/">
+
+  <link rel="icon" href="assets/img/favicon-150.webp" sizes="32x32">
+  <link rel="icon" href="assets/img/favicon-300.webp" sizes="192x192">
+  <link rel="apple-touch-icon" href="assets/img/favicon-300.webp">
+
+  <link rel="preload" href="assets/fonts/anton-v27-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="assets/style.css?v=1">
+
+  <style>
+    html, body { margin: 0; padding: 0; }
+    body { background: #070B14; }
+  </style>
+</head>
+<body>
+  <noscript>
+    <div style="background:#F87171;color:#06121F;padding:12px;text-align:center;font-family:sans-serif;font-size:14px">
+      Ative o JavaScript para montar o filtro.
+    </div>
+  </noscript>
+
+  <div id="app">
+    <div class="tarja-topo">
+      Versão independente para estudo &middot; sem vínculo com o Investidor10
+    </div>
+
+    <header class="hero">
+      <div class="wrap">
+        <div class="brandbar">
+          <div class="brand">
+            <span class="brand-mark">GF</span>
+            <span class="brand-name">Gerador de Filtros</span>
+          </div>
+          <span class="brand-tag">FIIs + Ações</span>
+        </div>
+
+        <h1>Monte o filtro.<br><span>Copie o roteiro.</span></h1>
+        <p class="hero-sub">Escolha o que você procura, ajuste os critérios e veja exatamente o que configurar no Investidor10 — sem planilha e sem conta.</p>
+
+        <div class="hero-pills">
+          <span>100% no navegador</span>
+          <span>Sem login</span>
+          <span>Sem limite de uso</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap layout">
+      <aside class="controls">
+        <section class="panel">
+          <div class="panel-heading">
+            <span class="step-num">01</span>
+            <div>
+              <h2>Classe de ativo</h2>
+              <p>Os critérios mudam conforme a classe.</p>
+            </div>
+          </div>
+          <div class="class-grid" id="classGrid"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <span class="step-num">02</span>
+            <div>
+              <h2>Estilo do filtro</h2>
+              <p>Comece por um objetivo ou por uma inspiração.</p>
+            </div>
+          </div>
+          <div id="styleList"></div>
+          <p class="small-note" id="styleNote"></p>
+          <button type="button" class="reset-btn" id="resetBtn">Restaurar este estilo</button>
+        </section>
+
+        <section class="panel help-panel">
+          <h3>Como usar</h3>
+          <ol>
+            <li>Escolha a classe e o estilo.</li>
+            <li>Ajuste ou desative critérios.</li>
+            <li>Copie o roteiro e configure no Investidor10.</li>
+          </ol>
+          <p>Os valores são pontos de partida. Confira sempre os indicadores e o relatório de cada ativo.</p>
+        </section>
+      </aside>
+
+      <section class="workspace">
+        <section class="panel criteria-panel">
+          <div class="panel-heading criteria-heading">
+            <span class="step-num">03</span>
+            <div>
+              <h2>Critérios do filtro</h2>
+              <p>Ative só o que faz sentido para você.</p>
+            </div>
+            <span class="active-count" id="activeCount">0 ativos</span>
+          </div>
+
+          <div id="criteriaList"></div>
+
+          <div class="manual-block">
+            <div class="manual-heading">
+              <div>
+                <span class="eyebrow-small">O que o filtro não vê</span>
+                <h3>Verificações manuais</h3>
+              </div>
+              <span class="manual-count" id="manualCount">0 selecionadas</span>
+            </div>
+            <p class="small-note">Estes pontos não são filtros numéricos. Eles entram no roteiro como checklist para você conferir na página de cada ativo.</p>
+            <div id="manualList"></div>
+          </div>
+        </section>
+
+        <section class="panel result-panel" id="resultPanel" aria-live="polite">
+          <div id="resultContent"></div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer wrap">
+      <p><b>Versão independente para estudo.</b> Este site não tem vínculo oficial com o Investidor10. Os estilos são adaptações educacionais de princípios públicos e não representam os investidores citados. Nada aqui é recomendação de compra ou venda.</p>
+      <p class="footer-meta">Tudo roda no seu navegador &middot; nenhum dado é coletado</p>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="assets/app.js?v=1" defer></script>
+</body>
+</html>
