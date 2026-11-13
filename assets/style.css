@@ -37,7 +37,7 @@
   --ink: #F1F5F9;
   --ink2: #CBD5E1;
   --muted: #94A3B8;
-  --muted2: #64748B;
+  --muted2: #7A8CA6;
   --accent: #38BDF8;
   --accent2: #22D3EE;
   --accent-soft: #7DD3FC;
@@ -1140,7 +1140,7 @@ a:hover { color: var(--accent); }
 
 .footer-meta {
   margin-top: 5px;
-  color: #4F5E73;
+  color: #5E7089;
 }
 
 .toast {
